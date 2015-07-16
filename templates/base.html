@@ -6,17 +6,22 @@
 </head>
 <header>
     <h2>{{header}}</h2>
-    <h2>500 words</h2>
 </header>
+
+<div id = "dropdown">
+<html>
+<form name id = "selection">
+<select onchange="window.location=this.value">
+<option value = "/markov">Text Generator</option>
+<option value = "/sengen">Sentence Generator</option>
+<option value = "/encrypt">Encryption</option>
+<option value = "/decrypt">Decryption</option>
+</select>
+</form>
+</div>
+<br>
 <body>
 {% block content %}
-
 {% endblock %}
-<br/>
-<br/>
-<a href="/markov/">Combination Markov Code</a><br/><br/>
-<a href="/markov/sawyer">Sawyer Markov Code</a><br/><br/>
-<a href="/markov/sherlock">Sherlock Markov Code</a><br/><br/>
-<a href="/markov/war">War of the Worlds Code</a>
 </body>
 </html>
