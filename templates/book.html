@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+
+{% block content %}
+{{the_text}}
+<br><br>
 <div id = "bookChoice">
 <form id = "selection">
 <select onchange = "window.location=this.value">
@@ -10,7 +14,4 @@
 </select>
 </form>
 </div>
-
-{% block content %}
-{{the_text}}
 {% endblock %}
