@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
+<div id = "bookChoice">
+<form id = "selection">
+<select onchange = "window.location=this.value">
+<option value = "/markov/">All</option>
+<option value = "/markov/sherlock">Sherlock</option>
+<option value = "/markov/war">War of the Worlds</option>
+<option value = "/markov/sawyer">Tom Sawyer</option>
+</select>
+</form>
+</div>
+
 {% block content %}
 {{the_text}}
 {% endblock %}
