@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+
+</head>
+<header>
+    <h2>{{header}}</h2>
+</header>
+
+<div id = "dropdown">
+
+<form id = "selection">
+<select onchange="window.location=this.value">
+<option {{main_page}} value= "/main">Main Page</option>
+<option {{text_generator}} value = "/markov">Text Generator</option>
+<option {{sent_generator}} value = "/sengen">Sentence Generator</option>
+<option {{encrypt_select}} value = "/encrypt">Encryption</option>
+</select>
+</form>
+</div>
+<br>
+<body>
+{% block content %}
+{% endblock %}
+</body>
+</html>
