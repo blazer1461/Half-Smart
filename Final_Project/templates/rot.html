@@ -2,5 +2,10 @@
 
 {% block content %}
 
+<form action= "/encrypt" method="POST">
+    <input type= "text" name="encryption"/>
+    <input type= "submit" value="Encrypt"/>
+</form>
 
+{{answer}}
 {% endblock %}

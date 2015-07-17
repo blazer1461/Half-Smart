@@ -1,7 +1,7 @@
 __author__ = 'blazer1461'
 
 from random import random
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from utils import ExampleModule as reader
 from random import choice
 final= Flask(__name__)
@@ -152,9 +152,15 @@ def main_page():
     return render_template("main_page_syntax.html", header= "Main Page", main_page= "selected", title= "Main Page")
 
 
-@final.route("/encrypt")
-def encrypt():
-    return "Ecrypting message"+ render_template("base.html", encrypt_select= "selected")
+
+@final.route("/encrypt", methods= ["POST", "GET"])
+def results():
+    if request.method == "GET":
+        return render_template("rot.html", header= "Encryption", encrypt_select="selected", title="Encryption")
+    elif request.method == "POST":
+        s= request.form["encryption"]
+        return render_template("rot.html", header= "Encryption", encrypt_select="selected", title="Encryption", answer= decryptString(s) )
+
 
 @final.route("/markov/")
 def both_text_files():
