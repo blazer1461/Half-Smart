@@ -159,7 +159,7 @@ def results():
         return render_template("rot.html", header= "Encryption", encrypt_select="selected", title="Encryption")
     elif request.method == "POST":
         s= request.form["encryption"]
-        d= request.form["key"]
+        d= request.form["My_Select"]
         return render_template("rot.html", header= "Encryption", encrypt_select="selected", title="Encryption", answer= encryptString(s, d))
 
 
@@ -169,14 +169,15 @@ def both_text_files():
 
 @final.route("/markov/<book>")
 def book(book):
-    if book == "sawyer" or book == "sawyer/":
+    if book == "sawyer":
         return render_template("book.html", text_generator= "selected", sawyer="selected", the_text= different_text('utils/data/sawyer.txt'), title= "Sawyer Code", header= "Markov Sawyer Code" )
 
-    if book == "sherlock" or book == "sherlock/":
+    if book == "sherlock":
         return render_template("book.html", text_generator= "selected", sherlock= "selected", the_text= different_text('utils/data/sherlock_text.txt'), title= "Sherlock Code", header= "Markov Sherlock Code")
 
-    if book == "war" or book == "war/":
+    if book == "war":
         return render_template("book.html", text_generator= "selected", war= "selected", the_text= different_text('utils/data/war_of_the_worlds_clean.txt'), title= "War of the Worlds Code", header= "Markov War of the Worlds Code")
 
 if __name__ == '__main__':
+    final.debug = True
     final.run(host= '0.0.0.0', port= 12345)
