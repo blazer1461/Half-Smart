@@ -48,8 +48,8 @@ def different_text(text_name):
 
 
 
-def encryptString (theString):
-    rotation = 13 # %=26
+def encryptString (theString, rotation):
+    rotated = int(rotation)
     encrypted = ""
     length = len(theString)
     for ex in xrange(length):
@@ -58,7 +58,7 @@ def encryptString (theString):
         tempInt = ord(tempStr)
         #print tempInt
         if (tempInt >= 65 and tempInt <= 90) or (tempInt >= 97 and tempInt <= 122):#check if letter
-            temp = tempInt + rotation
+            temp = tempInt + rotated
             #print temp
             if (temp >= 97 and temp <= 122) or (temp >= 65 and temp <= 90):#check is rotation does not need help
                 encrypted += chr(temp)
@@ -72,8 +72,8 @@ def encryptString (theString):
             encrypted += tempStr
     return encrypted
 
-def decryptString (theString): #or (theString, key)
-    return encryptString (theString)
+def decryptString (theString, key):
+    return encryptString (theString, 26-int(key))
 
 
 #Sengen
@@ -159,7 +159,8 @@ def results():
         return render_template("rot.html", header= "Encryption", encrypt_select="selected", title="Encryption")
     elif request.method == "POST":
         s= request.form["encryption"]
-        return render_template("rot.html", header= "Encryption", encrypt_select="selected", title="Encryption", answer= decryptString(s) )
+        d= request.form["key"]
+        return render_template("rot.html", header= "Encryption", encrypt_select="selected", title="Encryption", answer= encryptString(s, d))
 
 
 @final.route("/markov/")
