@@ -179,5 +179,4 @@ def book(book):
         return render_template("book.html", text_generator= "selected", war= "selected", the_text= different_text('utils/data/war_of_the_worlds_clean.txt'), title= "War of the Worlds Code", header= "Markov War of the Worlds Code")
 
 if __name__ == '__main__':
-    final.debug = True
     final.run(host= '0.0.0.0', port= 12345)
