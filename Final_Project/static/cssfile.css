@@ -34,6 +34,9 @@ padding: 10px;
 background-color: #000000;
 color: #3381A6;
 text-align: right;
+position: fixed;
+bottom: 0
+left:0;
 }
 
 .clearfix:after {
