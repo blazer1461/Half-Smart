@@ -169,13 +169,13 @@ def both_text_files():
 
 @final.route("/markov/<book>")
 def book(book):
-    if book == "sawyer":
+    if book == "sawyer" or book == "sawyer/":
         return render_template("book.html", text_generator= "selected", sawyer="selected", the_text= different_text('utils/data/sawyer.txt'), title= "Sawyer Code", header= "Markov Sawyer Code" )
 
-    if book == "sherlock":
+    if book == "sherlock" or book == "sherlock/":
         return render_template("book.html", text_generator= "selected", sherlock= "selected", the_text= different_text('utils/data/sherlock_text.txt'), title= "Sherlock Code", header= "Markov Sherlock Code")
 
-    if book == "war":
+    if book == "war" or book == "war/":
         return render_template("book.html", text_generator= "selected", war= "selected", the_text= different_text('utils/data/war_of_the_worlds_clean.txt'), title= "War of the Worlds Code", header= "Markov War of the Worlds Code")
 
 if __name__ == '__main__':

@@ -2,14 +2,4 @@
 {% block content %}
 {{the_text}}
 <br><br>
-<div id = "bookChoice">
-<form id = "selection">
-	<select onchange = "window.location=this.value">
-		<option {{all}} value = "/markov/">All</option>
-		<option {{sherlock}} value = "/markov/sherlock">Sherlock</option>
-		<option {{war}} value = "/markov/war">War of the Worlds</option>
-		<option {{sawyer}} value = "/markov/sawyer">Tom Sawyer</option>
-	</select>
-</form>
-</div>
 {% endblock %}

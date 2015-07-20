@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>{{title}}</title>
+
+	<link rel="stylesheet" type = "text/css" href="static/cssfile.css">
+	<title>{{title}}</title>
 
 </head>
 
+
+
 <header>
-    <h2>{{header}}</h2>
+	<h2>{{header}}</h2>
 </header>
-
-<div id = "dropdown">
-
-<form id = "selection">
-<select onchange="window.location=this.value">
-<option {{main_page}} value= "/main">Main Page</option>
-<option {{text_generator}} value = "/markov">Text Generator</option>
-<option {{sent_generator}} value = "/sengen">Sentence Generator</option>
-<option {{encrypt_select}} value = "/encrypt">Encryption</option>
-</select>
-</form>
-</div>
-<br>
 <body>
-{% block content %}
-{% endblock %}
-</body>
 
+	<header>
+		<div class = "menu-wrap">
+			<nav class = "menu">
+				<ul class = "clearfix">
+					<li><a href = "/">Home</a></li>
+					<li>
+						<a href = "/markov">Books<span class = "arrow">&#9661</span></a>
+						<ul class = "sub-menu">
+							<li><a href = "/markov/sherlock">Sherlock Holmes</a></li>
+							<li><a href = "/markov/war">War of the Worlds</a></li> 
+							<li><a href = "/markov/sawyer">Tom Sawyer</a></li>
+						</ul>
+					</li>
+					<li><a href = "/encrypt">Caesar Salad</a></li>
+					<li><a href = "/sengen">Sengen</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<br><br><br><br><br>
+	
+	{% block content %}
+	{% endblock %}
+</body>
+<footer >
+	Copyright &copy; Ayjin Inc. 2015
+</footer>
 </html>
