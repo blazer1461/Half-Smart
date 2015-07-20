@@ -2,6 +2,7 @@ body {
 background-color: #23C5CF;
 font-family: Arial, Times_New_Roman, Impact;
 }
+
 a {
 #text-decoration: none;
 color: #000000;
@@ -9,6 +10,7 @@ color: #000000;
 h1,h2,h3 {
 margin: 0;
 }
+
 .navlink {
 font-weight: bold;
 }
@@ -18,12 +20,14 @@ width: 1500px;
 margin-left: auto;
 margin-right: auto;
 }
+
 #header {
 background-color: #23C5CF;
 color:#3381A6;
 text-align: center;
 padding: 3px;
 }
+
 #footer {
 clear: both;
 padding: 10px;
